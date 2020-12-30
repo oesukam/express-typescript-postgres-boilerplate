@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Template</title>
+  </head>
+  <body b>
+    <h1>Main Layout</h1>
+    <div id="layout"></div>
+
+    <script>
+      const PRIMARY_COLOR = ' #be1622';
+      const FRONTEND_URL = 'https://oesukam.me';
+      const LOGO_URL = '';
+      const DOMAIN = 'domain.com';
+
+      const content = `
+      <div style="background-color:#f9f9f9; font-family: Roboto, Arial, Helvetica, sans-serif; padding: 15px;">
+        <div style="margin:0px auto;max-width:640px;background:transparent; text-align: center;">
+          <a href="${FRONTEND_URL}" target="_blank">
+            <img height="100" src="${LOGO_URL}" alt="" srcset="">
+          </a>
+        </div>
+        <div style="max-width:640px;margin:0 auto;border-radius:4px;overflow:hidden; background-color: #fff; padding: 10px; border: 1px solid #f0f0f0;">
+          <table style="width: 100%"">
+            <tr>
+              <td style="padding: 15px 0px;">
+                Body
+              </td>
+            </tr>
+            <tr>
+              <td style="word-break:break-word;font-size:0px;">
+                <p style="font-size:1px;margin:0px auto;border-top:1px solid #dcddde;width:100%"></p>
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #707070; padding: 10px;">
+                Need help? Contact our support team via support@${DOMAIN}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="margin:0px auto;max-width:640px;background:transparent; font-size: 11px;">
+          <p style="text-align: center;">
+            Sent by oesukam<br>
+          <p>
+        </div>
+      </div>
+
+      <h1>Verify email</h1>
+      <div style="background-color:#f9f9f9; font-family: Roboto, Arial, Helvetica, sans-serif; padding: 15px;">
+        <div style="margin:0px auto;max-width:640px;background:transparent; text-align: center;">
+          <a href="${FRONTEND_URL}" target="_blank">
+            <img height="100" src="${LOGO_URL}" alt="" srcset="">
+          </a>
+        </div>
+        <div style="max-width:640px;margin:0 auto;border-radius:4px;overflow:hidden; background-color: #fff; padding: 10px; border: 1px solid #f0f0f0;">
+          <table style="width: 100%"">
+            <tr>
+              <td style="padding: 15px 0px;">
+                <p>
+                  Hello <strong>First Name,</strong> <br>
+                  Thank you for signup with us<br>
+                  Please use the link below to verify your email<br>
+                </p>
+                <a 
+                  href="http://localhost:3000/verify_email?token=token"
+                  style="background-color: ${PRIMARY_COLOR}; padding: 10px; color: white; text-decoration: none; border-radius: 2px; display: inline-block; margin: 10px 0;"
+                  target="_blank"
+                >
+                  Verify Email
+                </a>
+                <p>If the above link is not clickable, try copying and pasting it into the address bar of your web browser.</p>
+                http://localhost:3000/verify_email?token=token
+              </td>
+            </tr>
+            <tr>
+              <td style="word-break:break-word;font-size:0px;">
+                <p style="font-size:1px;margin:0px auto;border-top:1px solid #dcddde;width:100%"></p>
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #707070; padding: 10px;">
+                Need help? Contact our support team via support@${DOMAIN}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="margin:0px auto;max-width:640px;background:transparent; font-size: 11px;">
+          <p style="text-align: center;">
+            Sent by oesukam<br>
+          <p>
+        </div>
+      </div>
+    `;
+      document.querySelector('#layout').innerHTML = content;
+    </script>
+  </body>
+</html>

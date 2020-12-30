@@ -1,0 +1,32 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "helpers": "./src/helpers",
+          "middlewares": "./src/middlewares",
+          "constants": "./src/constants",
+          "locales": "./src/locales",
+          "config": "./src/config",
+          "emails": "./src/emails",
+          "models": "./src/database/models",
+          "swagger": "./src/swagger",
+          "resources": "./src/resources",
+          "events": "./src/events",
+        }
+      }
+    ]
+  ]
+}

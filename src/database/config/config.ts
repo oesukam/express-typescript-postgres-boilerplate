@@ -11,7 +11,7 @@ const common = {
   }
 }
 
-const config: any = {
+module.exports = {
   development: {
     ...common,
   },
@@ -26,5 +26,3 @@ const config: any = {
     ...common,
   },
 };
-
-export default config;

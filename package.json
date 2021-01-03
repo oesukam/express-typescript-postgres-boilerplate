@@ -14,6 +14,13 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|js|json)\"",
     "format:check": "prettier --ignore-path .gitignore --list-different \"**/*.+(ts|js|json)\"",
+    "sequelize": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize $*",
+    "db:create": "npm run sequelize db:create",
+    "db:drop": "npm run sequelize db:drop",
+    "db:migrate": "npm run sequelize db:migrate",
+    "db:migrate:reset": "npm run sequelize db:migrate:undo:all",
+    "db:seed": "npm run sequelize db:seed:all",
+    "db:migrate:seed": "npm run sequelize db:migrate && npm run db:seed",
     "pm2:start": "pm2 start app.json",
     "pm2:deploy": "npm run build && npm run pm2:start",
     "pm2:stop": "pm2 stop app.json",
@@ -29,8 +36,7 @@
     "typescript",
     "node",
     "postgres",
-    "api",
-    ""
+    "api"
   ],
   "author": "",
   "license": "MIT",
@@ -71,6 +77,7 @@
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
+    "@babel/node": "^7.12.10",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-typescript": "^7.10.1",
     "@types/app-root-path": "^1.2.4",

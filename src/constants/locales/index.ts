@@ -4,7 +4,7 @@ const translates: any = {
   en,
 };
 
-const locales = (key: string, locale: 'en') => {
+const locales = (key: string, locale: 'en'): string => {
   if (!translates[locale]) {
     throw new Error("Locale doesn't exist");
   }

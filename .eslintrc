@@ -4,23 +4,29 @@
   "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
     "plugin:json/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
   ],
   "settings": {
     "import/resolver": {
       "babel-module": {},
+      "typescript": {},
       "jest": {
         "jestConfigFile": "./jest.config.js"
       }
     },
-    "import/extensions": [".js", ".ts"]
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never"
+      }
+    ]
   },
   "rules": {
-    "@typescript-eslint/no-explicit-any": 0,
-    "import/no-unresolved": 0
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
